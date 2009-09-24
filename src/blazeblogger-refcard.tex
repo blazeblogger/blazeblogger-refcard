@@ -60,7 +60,18 @@
 \begin{examples}
   \command{blaze-config blog.title Faraway}{choose the blog title}
   \command{blaze-config blog.subtitle i had a dream}{choose the blog subtitle}
-  \command{blaze-config user.name Dave}{choose the blog author}
+  \command{blaze-config blog.theme default.html}{choose the blog theme}
+  \command{blaze-config blog.style default.css}{choose the blog style}
+  \command{blaze-config blog.lang en\_GB}{choose the blog language}
+  \command{blaze-config blog.posts 10}{list 10 posts per page}
+  \longcommand{blaze-config blog.url http://blog.example.com/}{set the base URL}
+\end{examples}
+
+\noindent Configure the colours:
+
+\begin{examples}
+  \command{blaze-config color.list true}{use coloured repository listing}
+  \command{blaze-config color.log true}{use coloured log listing}
 \end{examples}
 
 \noindent Configure the BlazeBlogger:
@@ -69,14 +80,22 @@
   \command{blaze-config core.editor nano}{set the external text editor}
   \command{blaze-config core.encoding ISO-8859-1}{set the correct code page}
   \command{blaze-config core.extension php}{set the file extension}
-  \command{blaze-config color.list true}{use coloured repository listing}
-  \command{blaze-config color.log true}{use coloured log listing}
+  \longcommand{blaze-config core.processor `markdown -{}-html4tags \%in\% $>$ \%out\%'}{choose other markup language}
 \end{examples}
 
-\noindent Choose other markup language:
+\noindent Configure the post information:
 
 \begin{examples}
-  \plaincommand{blaze-config core.processor `markdown -{}-html4tags \%in\% $>$ \%out\%'}{}
+  \command{blaze-config post.author none}{location of the post author}
+  \command{blaze-config post.date top}{location of the date of publishing}
+  \command{blaze-config post.tags bottom}{location of the post tags}
+\end{examples}
+
+\noindent Configure the blog author:
+
+\begin{examples}
+  \command{blaze-config user.name David}{set author's name}
+  \longcommand{blaze-config user.email david@example.com}{set author's e-mail}
 \end{examples}
 
 \section*{Adding New Content}

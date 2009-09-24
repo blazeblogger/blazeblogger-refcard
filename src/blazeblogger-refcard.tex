@@ -55,17 +55,20 @@
 
 \section*{Configuring the Blog}
 
+\noindent Configure the blog:
+
+\begin{examples}
+  \command{blaze-config blog.title Faraway}{choose the blog title}
+  \command{blaze-config blog.subtitle i had a dream}{choose the blog subtitle}
+  \command{blaze-config user.name Dave}{choose the blog author}
+\end{examples}
+
 \noindent Configure the BlazeBlogger:
 
 \begin{examples}
-  \command{blaze-config core.editor nano}{choose external text editor}
+  \command{blaze-config core.editor nano}{set the external text editor}
   \command{blaze-config core.encoding ISO-8859-1}{set the correct code page}
   \command{blaze-config core.extension php}{set the file extension}
-\end{examples}
-
-\noindent Enable coloured output:
-
-\begin{examples}
   \command{blaze-config color.list true}{use coloured repository listing}
   \command{blaze-config color.log true}{use coloured log listing}
 \end{examples}

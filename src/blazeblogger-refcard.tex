@@ -14,9 +14,11 @@
 \usepackage[landscape,margin=1cm]{geometry}
 \usepackage{multicol}
 
+\setlength{\parindent}{0em}
+
 \newenvironment{examples}%
 {\vspace{.5em}
- \noindent\begin{tabular}{p{.49\columnwidth}p{.40\columnwidth}}}
+ \begin{tabular}{p{.49\columnwidth}p{.40\columnwidth}}}
 {\end{tabular}
  \vspace{.5em}}
 
@@ -54,7 +56,7 @@
 
 \section*{Creating a New Blog}
 
-\noindent Create a new blog repository:
+Create a new blog repository:
 
 \begin{examples}
   \command{blaze-init}{create it in the current directory}
@@ -62,7 +64,7 @@
   \command{blaze-init -{}-verbose}{list files as they are created}
 \end{examples}
 
-\noindent Recover corrupted repository:
+Recover corrupted repository:
 
 \begin{examples}
   \command{blaze-init}{keep already existing files intact}
@@ -71,7 +73,7 @@
 
 \section*{Configuring the Blog}
 
-\noindent Configure the blog:
+Configure the blog:
 
 \begin{examples}
   \command{blaze-config blog.title Faraway}{choose the blog title}
@@ -83,14 +85,14 @@
   \longcommand{blaze-config blog.url http://blog.example.com/}{set the base URL}
 \end{examples}
 
-\noindent Configure the colours:
+Configure the colours:
 
 \begin{examples}
   \command{blaze-config color.list true}{use coloured repository listing}
   \command{blaze-config color.log true}{use coloured log listing}
 \end{examples}
 
-\noindent Configure the BlazeBlogger:
+Configure the BlazeBlogger:
 
 \begin{examples}
   \command{blaze-config core.editor nano}{set the external text editor}
@@ -99,7 +101,7 @@
   \longcommand{blaze-config core.processor `markdown -{}-html4tags \%in\% $>$ \%out\%'}{choose other markup language}
 \end{examples}
 
-\noindent Configure the post information:
+Configure the post information:
 
 \begin{examples}
   \command{blaze-config post.author none}{location of the post author}
@@ -107,7 +109,7 @@
   \command{blaze-config post.tags bottom}{location of the post tags}
 \end{examples}
 
-\noindent Configure the blog author:
+Configure the blog author:
 
 \begin{examples}
   \command{blaze-config user.name David}{set author's name}
@@ -116,7 +118,7 @@
 
 \section*{Adding New Content}
 
-\noindent Add new post:
+Add new post:
 
 \begin{examples}
   \command{blaze-add}{write post in external text editor}
@@ -125,7 +127,7 @@
   \command{blaze-add -{}-html}{force writing the post in HTML}
 \end{examples}
 
-\noindent Add new page:
+Add new page:
 
 \begin{examples}
   \command{blaze-add -{}-page}{write page in external text editor}
@@ -134,7 +136,7 @@
   \command{blaze-add -{}-page -{}-html}{force writing the page in HTML}
 \end{examples}
 
-\noindent Use helpful placeholders:
+Use helpful placeholders:
 
 \begin{examples}
   \command{\%root\%}{relative path to root directory}
@@ -146,7 +148,7 @@
 
 \section*{Editing Existing Content}
 
-\noindent Edit a post:
+Edit a post:
 
 \begin{examples}
   \command{blaze-edit 1}{edit the post with ID 1}
@@ -154,7 +156,7 @@
   \command{blaze-edit -{}-force 1}{force creating raw file if missing}
 \end{examples}
 
-\noindent Edit a page:
+Edit a page:
 
 \begin{examples}
   \command{blaze-edit -{}-page 1}{edit the page with ID 1}
@@ -162,7 +164,7 @@
   \command{blaze-edit -{}-force -{}-page 1}{force creating raw file if missing}
 \end{examples}
 
-\noindent Use helpful placeholders:
+Use helpful placeholders:
 
 \begin{examples}
   \command{\%root\%}{relative path to root directory}
@@ -174,7 +176,7 @@
 
 \section*{Removing Existing Content}
 
-\noindent Remove a post:
+Remove a post:
 
 \begin{examples}
   \command{blaze-remove 1}{remove the post with ID 1}
@@ -182,7 +184,7 @@
   \command{blaze-remove -{}-interactive 1}{prompt before every removal}
 \end{examples}
 
-\noindent Remove a page:
+Remove a page:
 
 \begin{examples}
   \command{blaze-remove -{}-page 1}{remove the page with ID 1}
@@ -192,7 +194,7 @@
 
 \section*{Generating the Static Content}
 
-\noindent Create static HTML pages:
+Create static HTML pages:
 
 \begin{examples}
   \command{blaze-make}{create it in the current directory}
@@ -204,7 +206,7 @@
 
 \section*{Browsing the Blog Repository}
 
-\noindent List posts:
+List posts:
 
 \begin{examples}
   \command{blaze-list}{list all posts}
@@ -216,14 +218,14 @@
   \command{blaze-list -{}-reverse}{list posts in reverse order}
 \end{examples}
 
-\noindent List pages:
+List pages:
 
 \begin{examples}
   \command{blaze-list -{}-pages}{list all pages}
   \command{blaze-list -{}-pages -{}-short}{list each page on a single line}
 \end{examples}
 
-\noindent Show blog statistics:
+Show blog statistics:
 
 \begin{examples}
   \command{blaze-list -{}-stats}{display all statistics}
@@ -232,7 +234,7 @@
 
 \section*{Observing the Blog History}
 
-\noindent List repository changes:
+List repository changes:
 
 \begin{examples}
   \command{blaze-log}{list all changes}

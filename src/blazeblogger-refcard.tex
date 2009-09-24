@@ -22,6 +22,11 @@
 
 \newcommand{\command}[2]{%
  \scriptsize\sffamily\bfseries #1 & \scriptsize\sffamily #2 \\}
+\newcommand{\longcommand}[2]{%
+ \multicolumn{2}{l}{\scriptsize\sffamily\bfseries #1} \\
+ & \scriptsize\sffamily #2 \\}
+\newcommand{\plaincommand}[1]{%
+ \multicolumn{2}{l}{\scriptsize\sffamily\bfseries #1} \\}
 
 \pagestyle{empty}
 

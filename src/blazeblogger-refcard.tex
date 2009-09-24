@@ -53,6 +53,22 @@
   \command{blaze-init -{}-force}{revert files to their initial state}
 \end{examples}
 
+\section*{Configuring the Blog}
+
+\noindent Configure the BlazeBlogger:
+
+\begin{examples}
+  \command{blaze-config core.editor nano}{choose external text editor}
+  \command{blaze-config core.encoding ISO-8859-1}{set the correct code page}
+  \command{blaze-config core.extension php}{set the file extension}
+\end{examples}
+
+\noindent Choose other markup language:
+
+\begin{examples}
+  \plaincommand{blaze-config core.processor `markdown -{}-html4tags \%in\% $>$ \%out\%'}{}
+\end{examples}
+
 \section*{Adding New Content}
 
 \noindent Add new post:

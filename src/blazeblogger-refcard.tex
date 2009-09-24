@@ -28,6 +28,13 @@
 \newcommand{\plaincommand}[1]{%
  \multicolumn{2}{l}{\scriptsize\sffamily\bfseries #1} \\}
 
+\newcommand{\heading}[2]{%
+ \begin{center}
+   {\LARGE #1}
+
+   \vspace{.5em} #2
+ \end{center}}
+
 \makeatletter
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                      {-3.5ex \@plus -1ex \@minus -.2ex}%
@@ -42,6 +49,8 @@
 \footnotesize
 
 \begin{multicols}{3}
+
+\heading{BlazeBlogger Quick Reference Card}{(for version 1.0.0)}
 
 \section*{Creating a New Blog}
 

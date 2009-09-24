@@ -1,0 +1,160 @@
+% BlazeBlogger Quick Reference Card
+% Copyright (C) 2009 Jaromir Hradilek
+
+% Permission is granted to copy,  distribute  and/or  modify  this document
+% under the terms of the GNU Free Documentation License, Version 1.3 or any
+% later  version  published  by  the  Free  Software  Foundation;  with  no
+% Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+%
+% A copy of the license  is included  as a file called COPYING  in the main
+% directory of this document's source package.
+
+\documentclass[a4paper,10pt,landscape,twoside]{article}
+
+\usepackage[landscape,margin=.5in]{geometry}
+\usepackage{multicol}
+
+\newenvironment{examples}%
+{\vspace{.5em}
+ \noindent\begin{tabular}{p{.49\columnwidth}p{.40\columnwidth}}}
+{\end{tabular}
+ \vspace{.5em}}
+
+\newcommand{\command}[2]{%
+ \scriptsize\sffamily\bfseries #1 & \scriptsize\sffamily #2 \\}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\footnotesize
+
+\begin{multicols}{3}
+
+\section*{Creating a New Blog}
+
+\noindent Create a new blog repository:
+
+\begin{examples}
+  \command{blaze-init}{create it in the current directory}
+  \command{blaze-init -{}-blogdir \~{}/public\_html}{create it in the selected directory}
+  \command{blaze-init -{}-verbose}{list files as they are created}
+\end{examples}
+
+\noindent Recover corrupted repository:
+
+\begin{examples}
+  \command{blaze-init}{keep already existing files intact}
+  \command{blaze-init -{}-force}{revert files to their initial state}
+\end{examples}
+
+\section*{Adding New Content}
+
+\noindent Add new post:
+
+\begin{examples}
+  \command{blaze-add}{write post in external text editor}
+  \command{blaze-add release\_notes.txt}{add post from an existing file}
+  \command{blaze-add first.txt second.txt}{add multiple posts at once}
+  \command{blaze-add -{}-html}{force writing the post in HTML}
+\end{examples}
+
+\noindent Add new page:
+
+\begin{examples}
+  \command{blaze-add -{}-page}{write page in external text editor}
+  \command{blaze-add -{}-page about.txt}{add page from an existing file}
+  \command{blaze-add about.txt contact.txt}{add multiple pages at once}
+  \command{blaze-add -{}-page -{}-html}{force writing the page in HTML}
+\end{examples}
+
+\section*{Editing Existing Content}
+
+\noindent Edit a post:
+
+\begin{examples}
+  \command{blaze-edit 1}{edit the post with ID 1}
+  \command{blaze-edit -{}-html 1}{force editing the post in HTML}
+  \command{blaze-edit -{}-force 1}{force creating raw file if missing}
+\end{examples}
+
+\noindent Edit a page:
+
+\begin{examples}
+  \command{blaze-edit -{}-page 1}{edit the page with ID 1}
+  \command{blaze-edit -{}-html -{}-page 1}{force editing the page in HTML}
+  \command{blaze-edit -{}-force -{}-page 1}{force creating raw file if missing}
+\end{examples}
+
+\section*{Removing Existing Content}
+
+\noindent Remove a post:
+
+\begin{examples}
+  \command{blaze-remove 1}{remove the post with ID 1}
+  \command{blaze-remove 1 2 3}{remove multiple posts at once}
+  \command{blaze-remove -{}-interactive 1}{prompt before every removal}
+\end{examples}
+
+\noindent Remove a page:
+
+\begin{examples}
+  \command{blaze-remove -{}-page 1}{remove the page with ID 1}
+  \command{blaze-remove -{}-page 1 2 3}{remove multiple pages at once}
+  \command{blaze-remove -{}-interactive -{}-page 1}{prompt before every removal}
+\end{examples}
+
+\section*{Generating the Static Content}
+
+\noindent Create static HTML pages:
+
+\begin{examples}
+  \command{blaze-make}{create it in the current directory}
+  \command{blaze-make -{}-destdir \~{}/public\_html}{create it in the selected directory}
+  \command{blaze-make -{}-verbose}{list files as they are created}
+  \command{blaze-make -{}-full-paths}{make links point to index files}
+  \command{blaze-make -{}-no-rss}{do not create the RSS file}
+\end{examples}
+
+\section*{Browsing the Blog Repository}
+
+\noindent List posts:
+
+\begin{examples}
+  \command{blaze-list}{list all posts}
+  \command{blaze-list -{}-short}{list each post on a single line}
+  \command{blaze-list -{}-author David}{list posts written by David}
+  \command{blaze-list -{}-tag fantasy}{list posts tagged as `fantasy'}
+  \command{blaze-list -{}-year 2008 -{}-month 12}{list posts from December 2008}
+  \command{blaze-list -{}-number 5}{list latest five posts}
+  \command{blaze-list -{}-reverse}{list posts in reverse order}
+\end{examples}
+
+\noindent List pages:
+
+\begin{examples}
+  \command{blaze-list -{}-pages}{list all pages}
+  \command{blaze-list -{}-pages -{}-short}{list each page on a single line}
+\end{examples}
+
+\noindent Show blog statistics:
+
+\begin{examples}
+  \command{blaze-list -{}-stats}{display all statistics}
+  \command{blaze-list -{}-stats -{}-short}{display statistics on a single line}
+\end{examples}
+
+\section*{Observing the Blog History}
+
+\noindent List repository changes:
+
+\begin{examples}
+  \command{blaze-log}{list all changes}
+  \command{blaze-log -{}-short}{list each change on a single line}
+  \command{blaze-log -{}-number 5}{list latest five changes}
+  \command{blaze-log -{}-reverse}{list changes in reverse order}
+\end{examples}
+
+\end{multicols}
+
+\end{document}

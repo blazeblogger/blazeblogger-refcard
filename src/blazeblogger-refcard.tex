@@ -114,8 +114,18 @@
 \begin{examples}
   \command{blaze-add -{}-page}{write page in external text editor}
   \command{blaze-add -{}-page about.txt}{add page from an existing file}
-  \command{blaze-add about.txt contact.txt}{add multiple pages at once}
+  \command{blaze-add -{}-page about.txt contact.txt}{add multiple pages at once}
   \command{blaze-add -{}-page -{}-html}{force writing the page in HTML}
+\end{examples}
+
+\noindent Use helpful placeholders:
+
+\begin{examples}
+  \command{\%root\%}{relative path to root directory}
+  \command{\%home\%}{relative path to index page}
+  \command{\%page[\textmd{id}]\%}{relative path to given page}
+  \command{\%post[\textmd{id}]\%}{relative path to given post}
+  \command{\%tag[\textmd{name}]\%}{relative path to given tag}
 \end{examples}
 
 \section*{Editing Existing Content}

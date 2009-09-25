@@ -9,31 +9,61 @@
 % A copy of the license  is included  as a file called COPYING  in the main
 % directory of this document's source package.
 
+% #########################################################################
+%                          PREAMBLE STARTS HERE
+% #########################################################################
+
+% Specify the document type:
 \documentclass[a4paper,10pt,landscape,twoside]{article}
 
-\usepackage[landscape,margin=1cm]{geometry}
+% Enable UTF-8 encoding:
 \usepackage[utf8]{inputenc}
+
+% Enable multiple columns per page:
 \usepackage{multicol}
 
+% Set up the page layout:
+\usepackage[landscape,margin=1cm]{geometry}
+
+% Set up the paragraph indentation:
 \setlength{\parindent}{0em}
 
+% Define new environment for examples;  see also \command, \longcommand and
+% \plaincommand below. Usage:
+%
+%   \begin{example}
+%     \command{first command}{command's explanation}
+%     \command{second command}{command's explanation}
+%     ...
+%   \end{example}
 \newenvironment{examples}%
 {\vspace{.5em}
  \begin{tabular}{p{.49\columnwidth}p{.40\columnwidth}}}
 {\end{tabular}
  \vspace{.5em}}
 
+% Define new command for command example with additional explanation.
+% Usage: \command{command}{explanation}
 \newcommand{\command}[2]{%
  \scriptsize\sffamily\bfseries #1 & \scriptsize\sffamily #2 \\}
+
+% Define new command for long command example with additional explanation.
+% Usage: \longcommand{command}{explanation}
 \newcommand{\longcommand}[2]{%
  \multicolumn{2}{l}{\scriptsize\sffamily\bfseries #1} \\
  & \scriptsize\sffamily #2 \\}
+
+% Define new command for command example without further explanation.
+% Usage: \plaincommand{command}
 \newcommand{\plaincommand}[1]{%
  \multicolumn{2}{l}{\scriptsize\sffamily\bfseries #1} \\}
 
+% Define new command for document heading.
+% Usage: \heading{heading}{subheading}{link}
 \newcommand{\heading}[3]{%
  {\LARGE #1} #2 \hfill \textsf{#3}\hrule\nobreak}
 
+% Redefine the section command:
 \makeatletter
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                      {-3.5ex \@plus -1ex \@minus -.2ex}%
@@ -41,7 +71,12 @@
                                      {\normalsize\bfseries}}
 \makeatother
 
+% Clear header and footer:
 \pagestyle{empty}
+
+% #########################################################################
+%                          DOCUMENT STARTS HERE
+% #########################################################################
 
 \begin{document}
 

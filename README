@@ -1,0 +1,23 @@
+The BlazeBlogger Quick Reference Card  is distributed  as a  LaTeX2e source
+code,  which means that in order to get a printable  document,  you have to
+run it through the typesetting  system first.  To make this process as easy
+as possible,  appropriate Makefile is included in the root directory of the
+source package;  to produce the document in desired file format, use one of
+the following commands:
+
+  make pdf          # Create the card in Portable Document Format.
+  make dvi          # Create the card in Device independent file format.
+  make ps           # Create the card in PostScript.
+
+Alternatively, you can perform respective actions manually.  To produce the
+PDF file, type:
+
+  pdflatex blazeblogger-refcard.tex
+
+To produce the DVI file, run:
+
+  latex blazeblogger-refcard.tex
+
+Finally, to convert already created DVI to PostScript, use:
+
+  dvips -t a4 -t landscape blazeblogger-refcard.dvi

@@ -116,19 +116,21 @@ Configure the blog:
   \command{blaze-config blog.style default.css}{choose the blog style}
   \command{blaze-config blog.lang en\_GB}{choose the blog language}
   \command{blaze-config blog.posts 10}{list 10 posts per page}
-  \longcommand{blaze-config blog.url http://blog.example.com/}{set the base URL}
 \end{examples}
 
-Configure the colours:
+Configure the RSS feed:
 
 \begin{examples}
-  \command{blaze-config color.list true}{use coloured repository listing}
-  \command{blaze-config color.log true}{use coloured log listing}
+  \command{blaze-config feed.posts 10}{list 10 posts in the feed}
+  \command{blaze-config feed.fullposts true}{list whole posts}
+  \longcommand{blaze-config feed.baseurl http://blog.example.com/}{set the blog's base URL}
 \end{examples}
 
 Configure the BlazeBlogger:
 
 \begin{examples}
+  \command{blaze-config color.list true}{use coloured repository listing}
+  \command{blaze-config color.log true}{use coloured log listing}
   \command{blaze-config core.editor nano}{set the external text editor}
   \command{blaze-config core.encoding ISO-8859-1}{set the correct code page}
   \command{blaze-config core.extension php}{set the file extension}

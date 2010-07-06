@@ -107,6 +107,18 @@ Recover corrupted repository:
 
 \section*{Configuring the Blog}
 
+Configure the BlazeBlogger:
+
+\begin{examples}
+  \command{blaze-config color.list true}{use colored repository listing}
+  \command{blaze-config color.log true}{use colored log listing}
+  \command{blaze-config core.doctype xhtml}{set the document type}
+  \command{blaze-config core.extension php}{set the file extension}
+  \command{blaze-config core.encoding ISO-8859-1}{set the correct code page}
+  \command{blaze-config core.editor nano}{set the external text editor}
+  \longcommand{blaze-config core.processor `markdown \%in\% $>$ \%out\%'}{choose other markup language}
+\end{examples}
+
 Configure the blog:
 
 \begin{examples}
@@ -126,17 +138,6 @@ Configure the RSS feed:
   \longcommand{blaze-config feed.baseurl http://blog.example.com/}{set the blog's base URL}
 \end{examples}
 
-Configure the BlazeBlogger:
-
-\begin{examples}
-  \command{blaze-config color.list true}{use coloured repository listing}
-  \command{blaze-config color.log true}{use coloured log listing}
-  \command{blaze-config core.editor nano}{set the external text editor}
-  \command{blaze-config core.encoding ISO-8859-1}{set the correct code page}
-  \command{blaze-config core.extension php}{set the file extension}
-  \longcommand{blaze-config core.processor `markdown -{}-html4tags \%in\% $>$ \%out\%'}{choose other markup language}
-\end{examples}
-
 Configure the post information:
 
 \begin{examples}
@@ -149,19 +150,14 @@ Configure the blog author:
 
 \begin{examples}
   \command{blaze-config user.name David}{set author's name}
-  \longcommand{blaze-config user.email david@example.com}{set author's e-mail}
-\end{examples}
-
-Display the current setting:
-
-\begin{examples}
-  \command{blaze-config blog.title}{display the blog title}
+  \command{blaze-config user.nickname Dave}{set author's nickname}
+  \longcommand{blaze-config user.email david@example.com}{set author's email}
 \end{examples}
 
 Edit the configuration file:
 
 \begin{examples}
-  \command{blaze-config -{}-edit}{open it in external text editor}
+  \command{blaze-config -{}-edit}{open it in the external text editor}
 \end{examples}
 
 \section*{Adding New Content}
@@ -169,10 +165,10 @@ Edit the configuration file:
 Add new post:
 
 \begin{examples}
-  \command{blaze-add}{write post in external text editor}
-  \command{blaze-add release\_notes.txt}{add post from an existing file}
+  \command{blaze-add}{write a post in the text editor}
+  \command{blaze-add release\_notes.txt}{create a post from the file}
   \command{blaze-add first.txt second.txt}{add multiple posts at once}
-  \command{blaze-add -{}-no-processor}{disable the use of processor}
+  \command{blaze-add -{}-no-processor}{disable the use of the processor}
 \end{examples}
 
 Add new page:
@@ -181,18 +177,18 @@ Add new page:
   \command{blaze-add -{}-page}{write page in external text editor}
   \command{blaze-add -{}-page about.txt}{add page from an existing file}
   \command{blaze-add -{}-page about.txt contact.txt}{add multiple pages at once}
-  \command{blaze-add -{}-page -{}-no-processor}{disable the use of processor}
+  \command{blaze-add -{}-page -{}-no-processor}{disable the use of the processor}
 \end{examples}
 
 Use helpful placeholders:
 
 \begin{examples}
-  \command{$<$!-{}- break -{}-$>$}{place `read more' link here}
-  \command{\%root\%}{relative path to root directory}
-  \command{\%home\%}{relative path to index page}
-  \command{\%page[\textmd{id}]\%}{relative path to given page}
-  \command{\%post[\textmd{id}]\%}{relative path to given post}
-  \command{\%tag[\textmd{name}]\%}{relative path to given tag}
+  \command{$<$!-{}- break -{}-$>$}{place the `read more' link here}
+  \command{\%root\%}{relative path to the root directory}
+  \command{\%home\%}{relative path to the index page}
+  \command{\%page[\textmd{id}]\%}{relative path to the given page}
+  \command{\%post[\textmd{id}]\%}{relative path to the given post}
+  \command{\%tag[\textmd{name}]\%}{relative path to the given tag}
 \end{examples}
 
 \section*{Generating the Static Content}
@@ -207,36 +203,36 @@ Create static HTML pages:
   \command{blaze-make -{}-no-rss}{do not create the RSS file}
 \end{examples}
 
-\section*{Editing Existing Content}
+\section*{Editing the Existing Content}
 
 Edit a post:
 
 \begin{examples}
   \command{blaze-edit 1}{edit the post with ID 1}
-  \command{blaze-edit -{}-no-processor 1}{disable the use of processor}
-  \command{blaze-edit -{}-force 1}{force creating raw file if missing}
+  \command{blaze-edit -{}-no-processor 1}{disable the use of the processor}
+  \command{blaze-edit -{}-force 1}{enforce the creation of a raw file}
 \end{examples}
 
 Edit a page:
 
 \begin{examples}
   \command{blaze-edit -{}-page 1}{edit the page with ID 1}
-  \command{blaze-edit -{}-no-processor -{}-page 1}{disable the use of processor}
-  \command{blaze-edit -{}-force -{}-page 1}{force creating raw file if missing}
+  \command{blaze-edit -{}-no-processor -{}-page 1}{disable the use of the processor}
+  \command{blaze-edit -{}-force -{}-page 1}{enforce the creation of a raw file}
 \end{examples}
 
 Use helpful placeholders:
 
 \begin{examples}
-  \command{$<$!-{}- break -{}-$>$}{place `read more' link here}
-  \command{\%root\%}{relative path to root directory}
-  \command{\%home\%}{relative path to index page}
-  \command{\%page[\textmd{id}]\%}{relative path to given page}
-  \command{\%post[\textmd{id}]\%}{relative path to given post}
-  \command{\%tag[\textmd{name}]\%}{relative path to given tag}
+  \command{$<$!-{}- break -{}-$>$}{place the `read more' link here}
+  \command{\%root\%}{relative path to the root directory}
+  \command{\%home\%}{relative path to the index page}
+  \command{\%page[\textmd{id}]\%}{relative path to the given page}
+  \command{\%post[\textmd{id}]\%}{relative path to the given post}
+  \command{\%tag[\textmd{name}]\%}{relative path to the given tag}
 \end{examples}
 
-\section*{Removing Existing Content}
+\section*{Removing the Existing Content}
 
 Remove a post:
 
@@ -297,7 +293,7 @@ List repository changes:
 
 \scriptsize\sffamily
 
-Copyright \copyright\ 2009, 2010 Jaromír Hradílek \textsl{$<$jhradilek@gmail.com$>$}
+Copyright \copyright\ 2009, 2010 Jaromír Hradílek $<$jhradilek@gmail.com$>$
 
 \vspace{.5em}
 
